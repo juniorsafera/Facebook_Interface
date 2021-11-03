@@ -46,10 +46,15 @@ class _HomeState extends State<Home> {
 
            ],
           ),
+  /*
+          SliverToBoxAdapter(
+            child: , 
+          ),
+*/
 
             // Widget para testar o conteudo do body
           SliverToBoxAdapter(
-            child: Container(color: Colors.pink, height: 2500,),
+            child: Container(color: Palette_Colors.azulFacebook, height: 2500,),
           )
 
 
