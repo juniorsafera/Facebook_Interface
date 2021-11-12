@@ -73,17 +73,17 @@ List<Story> storys = [
 
       Story(
       usuario: usuariosOnline[5],
-      url: 'https://source.unsplash.com/rewyZqUwAqY/800x600',
+      url: 'https://source.unsplash.com/1HpQU1evGK8/800x600',
       ),
 
       Story(
       usuario: usuariosOnline[6],
-      url: 'https://source.unsplash.com/rewyZqUwAqY/800x600',
+      url: 'https://source.unsplash.com/W9z_628BBpc/800x600',
       ),
 
       Story(
       usuario: usuariosOnline[7],
-      url: 'https://source.unsplash.com/rewyZqUwAqY/800x600',
+      url: 'https://source.unsplash.com/DOb-2jd0sbc/800x600',
       ),
 
        
