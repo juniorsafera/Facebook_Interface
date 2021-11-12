@@ -1,3 +1,4 @@
+import 'package:facebook_interface_responsive/components/area_story.dart';
 import 'package:facebook_interface_responsive/components/button_circle.dart';
 import 'package:facebook_interface_responsive/components/create_post.dart';
 import 'package:facebook_interface_responsive/data/data.dart';
@@ -52,13 +53,25 @@ class _HomeState extends State<Home> {
           SliverToBoxAdapter(
             child: CreatePost(usuario: usuarioAtual,) , 
           ),
- 
+
+           
+           SliverPadding(
+             padding: EdgeInsets.fromLTRB(0, 10, 0, 5),
+             sliver: SliverToBoxAdapter(
+                  child: AreaStory(
+                    usuario: usuarioAtual,
+                    storys: storys,
+                  ) ,
+             ),
+             ),
+     
 
             // Widget para testar o conteudo do body
+             
           SliverToBoxAdapter(
-            child: Container(color: Colors.grey[200], height: 2500,),
+             child: Container(color: Colors.grey[200], height: 2500,),
           )
-
+  
 
         ],
       ),

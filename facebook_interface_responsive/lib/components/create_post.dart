@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:facebook_interface_responsive/models/usuarios.dart';
-import 'package:facebook_interface_responsive/others/palette_colors.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show BuildContext, CircleAvatar, Colors, Column, Container, Divider, EdgeInsets, Expanded, Icon, Icons, InputDecoration, Key, MainAxisAlignment, Row, SizedBox, StatelessWidget, Text, TextButton, TextField, TextStyle, VerticalDivider, Widget;
 
 class CreatePost extends StatelessWidget {
 
