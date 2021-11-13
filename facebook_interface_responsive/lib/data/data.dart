@@ -32,14 +32,14 @@ Usuario usuarioAtual = Usuario(
 );
  
 List<Usuario> usuariosOnline = [
-  Usuario(nome: 'Junior Santos', urlImagem: 'https://source.unsplash.com/UJLAMjEjISo/800x600'),
-  Usuario(nome: 'Daniel Salles', urlImagem: 'https://source.unsplash.com/0wRXAXqIp58/800x600'),
-  Usuario(nome: 'Lucilene Souza', urlImagem: 'https://source.unsplash.com/59HOrlAKTOU/800x600'),
+  Usuario(nome: 'Lucilene Souza', urlImagem: 'https://source.unsplash.com/UJLAMjEjISo/800x600'),
+  Usuario(nome: 'Fátima Ferreira', urlImagem: 'https://source.unsplash.com/0wRXAXqIp58/800x600'),
+  Usuario(nome: 'Daniel Salles', urlImagem: 'https://source.unsplash.com/59HOrlAKTOU/800x600'),
   Usuario(nome: 'Tainara Taylor', urlImagem: 'https://source.unsplash.com/GXzHGgzraHc/800x600'),
-  Usuario(nome: 'Dom Savio', urlImagem: 'https://source.unsplash.com/MS0RHQ1enek/800x600'),
-  Usuario(nome: 'Dom Savio', urlImagem: 'https://source.unsplash.com/MS0RHQ1enek/800x600'),
-  Usuario(nome: 'Dom Savio', urlImagem: 'https://source.unsplash.com/MS0RHQ1enek/800x600'),
-  Usuario(nome: 'Dom Savio', urlImagem: 'https://source.unsplash.com/MS0RHQ1enek/800x600'),
+  Usuario(nome: 'Dom Savio', urlImagem: 'https://source.unsplash.com/y8yimL21z8s/800x600'),
+  Usuario(nome: 'Yudi Gustavo', urlImagem: 'https://source.unsplash.com/MS0RHQ1enek/800x600'),
+  Usuario(nome: 'Cibely Santos', urlImagem: 'https://source.unsplash.com/PXWiHU7pbeg/800x600'),
+  Usuario(nome: 'Antônio José', urlImagem: 'https://source.unsplash.com/9ChfwZzv4ys/800x600'),
 ];
 
 List<Story> storys = [
