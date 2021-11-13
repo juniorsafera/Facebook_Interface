@@ -27,8 +27,8 @@ import 'package:facebook_interface_responsive/models/usuarios.dart';
 // Usuário Logado
 Usuario usuarioAtual = Usuario(
     nome: 'Karolayne Marques',
-    urlImagem: 'https://source.unsplash.com/PXWiHU7pbeg/800x600',
-   //urlImagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyoNYlrXoLLcNSIqz2xYL8xCLKYOKhMtn5vX5q7dUalYsbgGlZkfM4rKjW09uQYwLDGgk&usqp=CAU',
+    //urlImagem: 'https://source.unsplash.com/PXWiHU7pbeg/800x600',
+    urlImagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyoNYlrXoLLcNSIqz2xYL8xCLKYOKhMtn5vX5q7dUalYsbgGlZkfM4rKjW09uQYwLDGgk&usqp=CAU',
 );
  
 List<Usuario> usuariosOnline = [

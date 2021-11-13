@@ -3,9 +3,15 @@ import 'package:facebook_interface_responsive/models/storys.dart';
 import 'package:flutter/material.dart';
 
 class CartaoStory extends StatelessWidget {
+
  final  Story story ;
+ final bool adicionarStory;
+
   const CartaoStory({ Key? key,
-  required this.story
+  
+  required this.story,
+  this.adicionarStory = false
+
    }) : super(key: key);
 
   @override

@@ -25,9 +25,28 @@ class AreaStory extends StatelessWidget {
       child: ListView.builder(
         padding: EdgeInsets.symmetric(horizontal: 8,vertical: 10),
         scrollDirection: Axis.horizontal,
-        itemCount: storys.length,
+        itemCount: 1 + storys.length, // 1 + 8 = 9
         itemBuilder: (context, indice){
-          Story story = storys [indice];
+
+            if(indice == 0){
+              Story storyUsuario =
+               Story(
+                 usuario: usuarioAtual,
+                  url: usuarioAtual.urlImagem,
+                  
+                  );
+               
+               return Padding(
+            padding: EdgeInsets.symmetric(horizontal: 4),
+            child: CartaoStory(
+              adicionarStory: true,
+              story: storyUsuario,
+              
+            ),
+            );
+            }  
+ 
+          Story story = storys [indice - 1];
 
           return Padding(
             padding: EdgeInsets.symmetric(horizontal: 4),
