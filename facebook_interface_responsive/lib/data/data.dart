@@ -127,7 +127,7 @@ import 'package:facebook_interface_responsive/models/usuarios.dart';
 
               Post(
               usuario: usuariosOnline[3],
-              descricao: 'd' ,
+              descricao: 'Não importa o que você sabe, mas o que faz com o que você sabe!' ,
               tempoAtras: "1h",
               urlImage: "https://source.unsplash.com/sfL_QOnmy00/800x600",
               curtidas: 30,
@@ -175,5 +175,5 @@ import 'package:facebook_interface_responsive/models/usuarios.dart';
               comentarios: 25,
               compartilhamentos: 3
               ),
-              
+
               ];
