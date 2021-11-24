@@ -86,9 +86,12 @@ class _HomeState extends State<Home> {
                     );
                },
                childCount: posts.length,
-             )
-             )
-  
+             ),
+             ),
+
+
+         
+
 
         ],
       ),

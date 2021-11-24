@@ -1,6 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:facebook_interface_responsive/components/imageUser.dart';
+import 'package:facebook_interface_responsive/data/data.dart';
 import 'package:facebook_interface_responsive/models/posts.dart';
+import 'package:facebook_interface_responsive/others/palette_colors.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CartaoPost extends StatelessWidget {
@@ -35,7 +38,13 @@ class CartaoPost extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 8),
             child: CachedNetworkImage( imageUrl: post.urlImage,),
             ),
-          Container(color: Colors.amberAccent, width: 100, height: 20,)
+
+          // Área de estatísticas
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8),
+            child: EstatisticasPost(post: post),
+            ),
+            
        ],)
     );
   }
@@ -97,3 +106,70 @@ class CabecalhoPost extends StatelessWidget {
      
   } 
 }
+
+
+
+    class EstatisticasPost extends StatelessWidget {
+      final Post post;
+      const EstatisticasPost({ Key? key,
+        required this.post,
+       }) : super(key: key);
+    
+      @override
+      Widget build(BuildContext context) {
+        return Column(
+          children: [
+            Row(
+              children: [
+                Container(
+
+                  padding: EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                    color: Palette_Colors.azulFacebook,
+                    shape: BoxShape.circle,
+                  ),
+
+                  child: Icon(
+                    Icons.thumb_up,
+                    color: Colors.white,
+                    size: 10,
+                     ),
+                ),
+
+                SizedBox(width: 4,),
+              
+              Expanded(child: 
+              Text(
+                "${post.curtidas}",
+                style: TextStyle(
+                  color: Colors.grey[700],
+                ),
+              ),
+              )
+              ,
+
+              Text(
+                "${post.comentarios} comentários",
+                style: TextStyle(
+                  color: Colors.grey[700],
+                ),
+              ),
+
+              SizedBox(width: 10,),
+
+              Text(
+                "${post.compartilhamentos} compartilhamentos",
+                style: TextStyle(
+                  color: Colors.grey[700],
+                ),
+              )
+
+              ],
+            ),
+            Divider(thickness: 1.2,),
+            Row(),              
+             
+          ],
+        );
+      }
+    }
