@@ -5,6 +5,9 @@ import 'package:facebook_interface_responsive/models/posts.dart';
 import 'package:facebook_interface_responsive/others/palette_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:line_icons/line_icon.dart';
+import 'package:line_icons/line_icons.dart';
+ 
 
 class CartaoPost extends StatelessWidget {
 
@@ -16,6 +19,9 @@ class CartaoPost extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+       color: Colors.white,
+       margin: EdgeInsets.symmetric(vertical: 8),
+       padding: EdgeInsets.symmetric(vertical: 8),
        child: Column(        
          children: [
 
@@ -50,6 +56,9 @@ class CartaoPost extends StatelessWidget {
   }
 }
 
+
+
+// Área de widgets usados apenas uma vez
 
 class CabecalhoPost extends StatelessWidget {
   final Post post;
@@ -167,9 +176,65 @@ class CabecalhoPost extends StatelessWidget {
               ],
             ),
             Divider(thickness: 1.2,),
-            Row(),              
+            Row(
+              children: [
+
+                BotaoPost
+                (icone: Icon(LineIcons.thumbsUpAlt), 
+                texto: "Curtir", 
+                onTap: (){}),
+
+                BotaoPost(
+                  icone: Icon(LineIcons.alternateCommentAlt),
+                  texto: "Comentar",
+                   onTap: (){}),
+
+                BotaoPost(icone: Icon(LineIcons.share), 
+                texto: "Compartilhar", 
+                onTap: (){})
+              ],
+            ),              
              
           ],
         );
       }
     }
+
+  class BotaoPost extends StatelessWidget {
+
+    final Icon icone;
+    final String texto;
+    final VoidCallback onTap;
+
+    const BotaoPost({ Key? key,
+    required this.icone,
+    required this.texto,
+    required this.onTap,
+     }) : super(key: key);
+  
+    @override
+    Widget build(BuildContext context) {
+      return Expanded(
+        child: Material(
+          child: InkWell(
+          onTap: onTap,
+          child: Container(
+            child: Row(
+                children: [
+                  icone,
+                  SizedBox(width: 4,),
+                  Text(
+                    texto,
+                    style: TextStyle(
+                      color: Colors.grey[700],
+                      fontWeight: FontWeight.bold
+                    ),
+                  ),
+                ],
+            ) ,),
+        ),
+        )
+      );
+    }
+  }
+
