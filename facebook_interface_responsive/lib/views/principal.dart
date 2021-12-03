@@ -18,6 +18,7 @@ class _PrincipalState extends State<Principal> {
     Scaffold(backgroundColor: Colors.amberAccent),
     Scaffold(backgroundColor: Colors.red),
     Scaffold(backgroundColor: Colors.purple),
+    Scaffold(backgroundColor: Colors.brown),
   ];
 
 
@@ -30,7 +31,7 @@ class _PrincipalState extends State<Principal> {
     Icons.menu
   ];
 
-  int indexAbaSelected = 0;
+  int _indiceAbaSelecionada = 0;
 
 
   @override
@@ -38,8 +39,19 @@ class _PrincipalState extends State<Principal> {
     return  DefaultTabController(
       length: _icones.length, 
       child: Scaffold(
-        body: TabBarView(children: _telas),
-        bottomNavigationBar: NavegacaoAbas() ,) 
+        body: TabBarView(
+          children: _telas
+          ),
+        bottomNavigationBar: NavegacaoAbas(
+          icones: _icones,
+          indiceAbaSelecionada: _indiceAbaSelecionada,
+          ontap: (indice){
+            setState(() {
+              _indiceAbaSelecionada = indice;
+            });
+          },
+        ) ,
+        ) 
       );
   }
 }
