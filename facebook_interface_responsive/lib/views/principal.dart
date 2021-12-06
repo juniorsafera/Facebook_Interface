@@ -40,6 +40,7 @@ class _PrincipalState extends State<Principal> {
       length: _icones.length, 
       child: Scaffold(
         body: TabBarView(
+          physics: NeverScrollableScrollPhysics(),
           children: _telas
           ),
         bottomNavigationBar: NavegacaoAbas(
