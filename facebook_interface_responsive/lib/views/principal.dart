@@ -1,4 +1,6 @@
 import 'package:facebook_interface_responsive/components/nav_abas.dart';
+import 'package:facebook_interface_responsive/components/nav_desktop.dart';
+import 'package:facebook_interface_responsive/others/responsive.dart';
 import 'package:facebook_interface_responsive/views/home.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
@@ -36,22 +38,35 @@ class _PrincipalState extends State<Principal> {
 
   @override
   Widget build(BuildContext context) {
+
+      final bool isDesktop = Responsivo.isDesktop(context);
+      Size largura = MediaQuery.of(context).size;
+
+
     return  DefaultTabController(
       length: _icones.length, 
       child: Scaffold(
+        appBar: isDesktop
+                ? PreferredSize(
+                  child: NavDesktop(),
+                  preferredSize: Size(largura.width, 65)
+                  )
+                : null ,
         body: TabBarView(
           physics: NeverScrollableScrollPhysics(),
           children: _telas
           ),
-        bottomNavigationBar: NavegacaoAbas(
-          icones: _icones,
-          indiceAbaSelecionada: _indiceAbaSelecionada,
-          ontap: (indice){
-            setState(() {
-              _indiceAbaSelecionada = indice;
-            });
-          },
-        ) ,
+        bottomNavigationBar: isDesktop
+                  ? null
+                  : NavegacaoAbas(
+                    icones: _icones,
+                    indiceAbaSelecionada: _indiceAbaSelecionada,
+                    ontap: (indice){
+                      setState(() {
+                        _indiceAbaSelecionada = indice;
+                      });
+                    },
+                  ) ,
         ) 
       );
   }
