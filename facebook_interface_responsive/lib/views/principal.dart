@@ -48,7 +48,15 @@ class _PrincipalState extends State<Principal> {
       child: Scaffold(
         appBar: isDesktop
                 ? PreferredSize(
-                  child: NavDesktop(),
+                  child: NavDesktop(
+                     icones: _icones,
+                    indiceAbaSelecionada: _indiceAbaSelecionada,
+                    ontap: (indice){
+                      setState(() {
+                        _indiceAbaSelecionada = indice;
+                      });
+                    },
+                  ),
                   preferredSize: Size(largura.width, 65)
                   )
                 : null ,
