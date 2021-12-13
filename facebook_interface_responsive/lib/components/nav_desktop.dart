@@ -1,15 +1,22 @@
+import 'package:facebook_interface_responsive/components/button_circle.dart';
+import 'package:facebook_interface_responsive/components/button_profile.dart';
 import 'package:facebook_interface_responsive/components/nav_abas.dart';
+import 'package:facebook_interface_responsive/models/usuarios.dart';
 import 'package:facebook_interface_responsive/others/palette_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:line_icons/line_icons.dart';
 
 
 class NavDesktop extends StatelessWidget {
+
+  final Usuario usuario;
 
   final List<IconData> icones;
   final int indiceAbaSelecionada;
   final Function(int) ontap;
   const NavDesktop({
      Key? key,
+      required this.usuario,
       required this.icones,
       required this.indiceAbaSelecionada,
       required this.ontap,
@@ -47,15 +54,39 @@ class NavDesktop extends StatelessWidget {
            ),
 
           Expanded(child: NavegacaoAbas(
+            
            icones:  icones,
            indiceAbaSelecionada: indiceAbaSelecionada,
            ontap:  ontap,
            indicadorBaixo: true,
+           
      
           ) ,
            ),
 
-          Expanded(child:  Container(),)
+          Expanded(child:  Row(
+             mainAxisAlignment: MainAxisAlignment.end,
+       
+            children: [
+ 
+              ButtonProfile(
+                usuario: usuario, 
+                onTap: (){}),
+
+              
+              ButtonCircle(
+                icone: Icons.search, 
+                iconeTamanho: 30, 
+                onPressed: (){}
+            ),
+
+              ButtonCircle(
+                icone: LineIcons.facebookMessenger, 
+                iconeTamanho: 30, 
+                onPressed: (){}
+            ),
+            ],
+          ),)
 
         ],
       ),

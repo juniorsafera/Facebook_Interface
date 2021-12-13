@@ -1,5 +1,6 @@
 import 'package:facebook_interface_responsive/components/nav_abas.dart';
 import 'package:facebook_interface_responsive/components/nav_desktop.dart';
+import 'package:facebook_interface_responsive/data/data.dart';
 import 'package:facebook_interface_responsive/others/responsive.dart';
 import 'package:facebook_interface_responsive/views/home.dart';
 import 'package:flutter/material.dart';
@@ -49,6 +50,7 @@ class _PrincipalState extends State<Principal> {
         appBar: isDesktop
                 ? PreferredSize(
                   child: NavDesktop(
+                    usuario: usuarioAtual,
                      icones: _icones,
                     indiceAbaSelecionada: _indiceAbaSelecionada,
                     ontap: (indice){
