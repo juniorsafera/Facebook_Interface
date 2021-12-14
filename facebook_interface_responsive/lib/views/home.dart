@@ -2,6 +2,7 @@ import 'package:facebook_interface_responsive/components/area_story.dart';
 import 'package:facebook_interface_responsive/components/button_circle.dart';
 import 'package:facebook_interface_responsive/components/cartao_post.dart';
 import 'package:facebook_interface_responsive/components/create_post.dart';
+import 'package:facebook_interface_responsive/components/list_contacts.dart';
 import 'package:facebook_interface_responsive/data/data.dart';
 import 'package:facebook_interface_responsive/models/posts.dart';
 import 'package:facebook_interface_responsive/others/palette_colors.dart';
@@ -195,12 +196,24 @@ class HomeDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
+    return Row(
+      children: [
+
+        // Coluna 1
+        Flexible(
+          flex: 2,
+          child: Container(color: Colors.amberAccent,)
+          ),
+
+        // Espaçamento
+        Spacer(),
+
+        // Coluna 2
+        Flexible(
+          flex: 6,
+          child: CustomScrollView(
         slivers: [
-
-           
-
-
+ 
           // Área de exibição de storys
            SliverPadding(
              padding: EdgeInsets.fromLTRB(0, 10, 0, 5),
@@ -232,6 +245,23 @@ class HomeDesktop extends StatelessWidget {
              ),
              ),
         ],
-      );
+      )
+      ),
+
+        // Espaçamento
+        Spacer(),
+
+        // Coluna 3
+        Flexible(
+          flex: 2,
+          child:  Padding(
+            padding: EdgeInsets.all(12),
+            child: ListContacts(
+              usuarios: usuariosOnline
+              ),
+            )
+          )
+      ],
+    );
   }
 }
