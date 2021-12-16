@@ -2,6 +2,7 @@ import 'package:facebook_interface_responsive/components/cartao_story.dart';
 import 'package:facebook_interface_responsive/data/data.dart';
 import 'package:facebook_interface_responsive/models/storys.dart';
 import 'package:facebook_interface_responsive/models/usuarios.dart';
+import 'package:facebook_interface_responsive/others/responsive.dart';
 import 'package:flutter/material.dart';
 
 class AreaStory extends StatelessWidget {
@@ -18,9 +19,11 @@ class AreaStory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDesktop = Responsivo.isDesktop(context);
+
     return Container(
       height: 200,
-      color: Colors.white,
+      color: isDesktop ? Colors.transparent : Colors.white,
        
       child: ListView.builder(
         padding: EdgeInsets.symmetric(horizontal: 8,vertical: 10),

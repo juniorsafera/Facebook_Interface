@@ -1,3 +1,4 @@
+import 'package:facebook_interface_responsive/components/button_profile.dart';
 import 'package:facebook_interface_responsive/models/usuarios.dart';
 import 'package:facebook_interface_responsive/others/palette_colors.dart';
 import 'package:flutter/material.dart';
@@ -25,13 +26,74 @@ class ListOptions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      /*child: ListView.builder(
+      child: ListView.builder(
         padding: EdgeInsets.symmetric(vertical: 10),
         itemCount: 1 + _opcoes.length,
         itemBuilder: (context, indice){
+
+          if(indice == 0){
+            return Padding(
+              padding: EdgeInsets.symmetric(vertical: 6),
+              child: ButtonProfile(
+                usuario: usuario,
+                onTap: (){} 
+                      ),
+              );
+          }
+
             List item = _opcoes[ indice - 1];
+            return Padding(
+              padding: EdgeInsets.symmetric(vertical: 6),
+              child: Opcao(
+                icone: item[0],
+                 cor: item[1], 
+                 texto: item[2], 
+                onTap: (){}),
+              );
         }
-        ),*/
+        ),
+    );
+  }
+}
+
+
+
+
+class Opcao extends StatelessWidget {
+
+  final IconData icone;
+  final Color cor;
+  final String texto;
+  final VoidCallback onTap;
+
+  const Opcao({ 
+    Key? key,
+
+    required this.icone,
+    required this.cor,
+    required this.texto,
+    required this.onTap,
+
+     }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child:  Row(
+        mainAxisSize: MainAxisSize.min,
+        children:[
+        Icon(icone, color: cor, size: 35,),
+        SizedBox(width: 4,),
+         Flexible(child:  Text(
+            texto, 
+            style: TextStyle(
+              fontSize: 16),
+           overflow: TextOverflow.ellipsis,
+              )
+              )
+      ],
+      ),
     );
   }
 }
