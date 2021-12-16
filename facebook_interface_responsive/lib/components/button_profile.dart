@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 
 
 class ButtonProfile extends StatelessWidget {
+
   final Usuario usuario;
   final VoidCallback onTap;
+  
   const ButtonProfile({ 
     Key? key,
 
@@ -16,6 +18,7 @@ class ButtonProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return InkWell(
       onTap: onTap,
       child:  Row(
