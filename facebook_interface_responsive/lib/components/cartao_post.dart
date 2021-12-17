@@ -3,6 +3,7 @@ import 'package:facebook_interface_responsive/components/imageUser.dart';
 import 'package:facebook_interface_responsive/data/data.dart';
 import 'package:facebook_interface_responsive/models/posts.dart';
 import 'package:facebook_interface_responsive/others/palette_colors.dart';
+import 'package:facebook_interface_responsive/others/responsive.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icon.dart';
@@ -18,7 +19,21 @@ class CartaoPost extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    bool isDesktop = Responsivo.isDesktop(context);
+    return Card(
+
+      margin: EdgeInsets.symmetric(
+        vertical: 8,
+        horizontal: isDesktop ? 5 : 0,
+      ),
+      elevation: isDesktop ? 1 : 0,
+      shape: isDesktop 
+              ? RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10)
+              )
+              : null,
+
+      child: Container(
        color: Colors.white,
        margin: EdgeInsets.symmetric(vertical: 8),
        padding: EdgeInsets.symmetric(vertical: 8),
@@ -52,6 +67,7 @@ class CartaoPost extends StatelessWidget {
             ),
             
        ],)
+    ),
     );
   }
 }

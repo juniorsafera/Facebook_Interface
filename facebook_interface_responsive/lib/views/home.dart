@@ -12,6 +12,8 @@ import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 
 class Home extends StatefulWidget {
+
+    
   const Home({ Key? key }) : super(key: key);
 
   @override
@@ -19,25 +21,44 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  final TrackingScrollController _scrollController = TrackingScrollController();
+
+  @override
+  void dispose(){
+    _scrollController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Responsivo(
-        mobile: HomeMobile(),
-        tablet: HomeTablet(),
-        desktop: HomeDesktop(),
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+       body: Responsivo(
+        mobile: HomeMobile(scrollController: _scrollController,),
+        tablet: HomeTablet(scrollController: _scrollController,),
+        desktop: HomeDesktop(scrollController: _scrollController,),
       ),
+    ),
     );
   }
 }
 
 
 class HomeMobile extends StatelessWidget {
-  const HomeMobile({ Key? key }) : super(key: key);
+
+  final TrackingScrollController scrollController;
+
+  const HomeMobile({ 
+    Key? key,
+    required this.scrollController
+   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+        controller: scrollController,
         slivers: [
 
           // Área do AppBar
@@ -113,11 +134,18 @@ class HomeMobile extends StatelessWidget {
 
 
 class HomeTablet extends StatelessWidget {
-  const HomeTablet({ Key? key }) : super(key: key);
+
+  final TrackingScrollController scrollController;
+
+  const HomeTablet({ 
+    Key? key,
+    required this.scrollController
+     }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+        controller: scrollController,
         slivers: [
 
           // Área do AppBar
@@ -193,7 +221,13 @@ class HomeTablet extends StatelessWidget {
 
 
 class HomeDesktop extends StatelessWidget {
-  const HomeDesktop({ Key? key }) : super(key: key);
+
+  final TrackingScrollController scrollController;
+
+  const HomeDesktop({
+     Key? key,
+     required this.scrollController
+      }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -218,7 +252,8 @@ class HomeDesktop extends StatelessWidget {
         Flexible(
           flex: 6,
           child: CustomScrollView(
-        slivers: [
+            controller: scrollController,
+            slivers: [
  
           // Área de exibição de storys
            SliverPadding(

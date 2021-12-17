@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:facebook_interface_responsive/models/usuarios.dart';
-import 'package:flutter/material.dart' show BuildContext, CircleAvatar, Colors, Column, Container, Divider, EdgeInsets, Expanded, Icon, Icons, InputDecoration, Key, MainAxisAlignment, Row, SizedBox, StatelessWidget, Text, TextButton, TextField, TextStyle, VerticalDivider, Widget;
+import 'package:facebook_interface_responsive/others/responsive.dart';
+import 'package:flutter/material.dart' show BorderRadius, BuildContext, Card, CircleAvatar, Colors, Column, Container, Divider, EdgeInsets, Expanded, Icon, Icons, InputDecoration, Key, MainAxisAlignment, RoundedRectangleBorder, Row, SizedBox, StatelessWidget, Text, TextButton, TextField, TextStyle, VerticalDivider, Widget;
 
 class CreatePost extends StatelessWidget {
 
@@ -11,12 +12,26 @@ class CreatePost extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.fromLTRB(12, 8, 12, 8),
-      color: Colors.white,
-      child: Column(
-        children: [
-          Row(
+
+    bool isDesktop = Responsivo.isDesktop(context);
+    return Card(
+
+      margin: EdgeInsets.symmetric(
+        vertical: 8,
+        horizontal: isDesktop ? 5 : 0,
+      ),
+      elevation: isDesktop ? 1 : 0,
+      shape: isDesktop 
+              ? RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10)
+              )
+              : null,
+
+      child: Container(
+        padding: EdgeInsets.fromLTRB(12, 8, 12, 8), 
+        child: Column(
+          children: [
+            Row(
             children: [
               CircleAvatar(
                 radius: 20,
@@ -67,6 +82,7 @@ class CreatePost extends StatelessWidget {
           ),
         ],
       ),
+    ) ,
     );
   }
 }
